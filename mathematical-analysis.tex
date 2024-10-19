@@ -1,5 +1,4 @@
 \documentclass[12pt]{article}
-
 \usepackage{style}
 
 \title{MATHEMATICAL ANALYSIS}
@@ -8,5 +7,144 @@
 
 \begin{document}
 \maketitle
+
+\section{Real Numbers}
+\subsection{The Set of Real Numbers}
+We define
+\begin{itemize}
+    \item The set of natural numbers is \(\N=\{1,2,3,\dots\}\).
+    \item The set of integers is \(\Z=\{0,1,-1,2,-2,\dots\}\).
+    \item The set of rational numbers is
+    \(\Q=\left\{\frac{m}{n}\mid m,n\in\Z,n\neq0\right\}\).
+    \item The set of real numbers is \(\R\).
+\end{itemize}
+Note that \(\N\subset\Z\subset\Q\subset\R\).
+\begin{definition}[Well Ordering Property of \(\N\)]
+    Every nonempty subset of \(\N\) has a least element.
+\end{definition}
+\begin{definition}
+    An \textit{ordered set} is a set \(S\) with a relation \(<\) such that
+    \begin{enumerate}
+        \item (\textit{Trichtomy}) If \(x,y\in S\), then one and only one of
+        the statements \(x<y,x=y,y<x\) is true.
+        \item (\textit{Transitivity}) If \(x,y,z\in S\), \(x<y\), and \(y<z\),
+        then \(x<z\).
+    \end{enumerate}
+\end{definition}
+\begin{definition}
+    Suppose \(S\) is an ordered set and \(E\subset S\).
+    If there exists a \(b\in S\) such that \(x\leq b\) for all \(x\in E\),
+    then \(E\) is \textit{bounded above} and \(b\) is an \textit{upper bound}
+    of \(E\).
+    If there exists an upper bound \(a\) such that \(a\leq b\) for all upper
+    bounds \(b\) of \(E\), then \(a\) is the \textit{least upper bound} or the
+    \textit{supremum} of \(E\) denoted by \(\sup E\).
+\end{definition}
+Similar definition applies for a set that is \textit{bounded below} and
+\textit{lower bound}.
+The \textit{greatest lower bound} or the \textit{infimum} of \(E\) is denoted
+by \(\inf E\).
+A set is \textit{bounded} if it is bounded above and below.
+\begin{definition}[Dedekind Completeness]
+    An ordered set \(S\) has the \textit{least-upper-bound property} if every
+    nonempty subset \(E\subset S\) that is bounded above has a least upper
+    bound, that is, \(\sup E\) exists in \(S\).
+\end{definition}
+\begin{theorem}
+    There exists a unique ordered field \(\R\) with the least-upper-bound
+    property such that \(\Q\subset\R\).
+\end{theorem}
+
+\subsection{Archimedian Property}
+\begin{theorem}
+    If \(x,\varepsilon\in\R\) and \(x\leq\varepsilon\) for all
+    \(\varepsilon>0\), then \(x\leq0\).
+\end{theorem}
+\begin{theorem}
+    Suppose \(x,y\in\R\).
+    \begin{enumerate}
+        \item (Archimedian property) If \(x>0\), then there exists an
+        \(n\in\N\) such that \(nx>y\).
+        \item (\(\Q\) is dense in \(\R\)) If \(x<y\), then there exists an
+        \(r\in\Q\) such that \(x<r<y\).
+    \end{enumerate}
+\end{theorem}
+If \(A\subset\R\) and \(\sup A\in A\), then the supremum is the
+\textit{maximum} of \(A\) denoted by \(\max A\).
+Similarly, the infimum is the \textit{minimum} of \(A\) denoted by \(\min A\).
+\begin{theorem}[Triangle Inequality]
+    If \(x,y\in\R\), then \(|x+y|\leq|x|+|y|\).
+\end{theorem}
+
+\section{Sequences and Series}
+\subsection{Sequences}
+\begin{definition}
+    A \textit{sequence} \(\{x_n\}\) is a function with domain \(\N\) and range
+    \(\R\).
+\end{definition}
+\begin{definition}
+    A sequence \(\{x_n\}\) is \textit{bounded} if there exists a \(B\in\R\)
+    such that \(|x_n|\leq B\) for all \(n\in\N\).
+\end{definition}
+\begin{definition}
+    A sequence is \textit{convergent} and has the unique \textit{limit} \(L\)
+    and we write
+    \[\lim_{n\to\infty}\{x_n\}=L\]
+    if for every \(\varepsilon>0\), there exists an \(N\in\N\) such that
+    \(|x_n-L|<\varepsilon\) for all \(n\geq N\).
+\end{definition}
+If a sequence is not convergent, then it is \textit{divergent}.
+\begin{theorem}
+    If a sequence is convergent, then it is bounded.
+\end{theorem}
+\begin{theorem}[Squeeze Theorem]
+    If \(a_n\leq b_n\leq c_n\) for all \(n\geq N\), and
+    \(\lim_{n\to\infty}a_n=\lim_{n\to\infty}c_n=L\), then
+    \[\lim_{n\to\infty}b_n=L\]
+\end{theorem}
+
+\subsection{Monotonic Sequences}
+\begin{definition}
+    A sequence \(\{x_n\}\) is \textit{increasing} if \(x_n\leq x_{n+1}\) or
+    \textit{decreasing} if \(x_n\geq x_{n+1}\) for all \(n\in\N\).
+    A sequence is \textit{monotonic} if it is increasing or decreasing.
+\end{definition}
+\begin{theorem}[Monotone Convergence Theorem]
+    A monotonic sequence is convergent if and only if it is bounded.
+\end{theorem}
+If \(\{x_n\}\) is increasing and bounded above, then
+\[\lim_{n\to\infty}x_n=\sup x_n\]
+If \(\{x_n\}\) is decreasing and bounded below, then
+\[\lim_{n\to\infty}x_n=\inf x_n\]
+
+\subsection{Subsequences}
+\begin{definition}
+    Let \(n_i\) be a sequence that satisfies \(n_i<n_{i+1}\) for all
+    \(i\in\N\).
+    The sequence \(\{x_{n_i}\}\) is a \textit{subsequence} of \(\{x_n\}\).
+\end{definition}
+\begin{theorem}
+    If \(\{x_n\}\) is convergent, then every subsequence \(\{x_{n_i}\}\) is
+    convergent, and
+    \[\lim_{n\to\infty}x_n=\lim_{i\to\infty}x_{n_i}\]
+\end{theorem}
+
+\subsection{Bolzano-Weierstrass Theorem}
+\begin{theorem}[Bolzano-Weierstrass Theorem]
+    Every bounded sequence has a convergent subsequence.
+\end{theorem}
+
+\subsection{Cauchy Sequences}
+\begin{definition}
+    A sequence \(\{x_n\}\) is a \textit{Cauchy sequence} if for every
+    \(\varepsilon>0\) there exists an \(N\in\N\) such that
+    \(|x_m-x_n|<\varepsilon\) for all \(m,n\geq\N\).
+\end{definition}
+\begin{theorem}
+    If a sequence is a Cauchy sequence, then it is bounded.
+\end{theorem}
+\begin{theorem}[Cauchy Completeness]
+    A sequence is convergent if and only if it is a Cauchy sequence.
+\end{theorem}
 
 \end{document}
