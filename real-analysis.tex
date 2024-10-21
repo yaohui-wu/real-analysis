@@ -1,23 +1,23 @@
 \documentclass[12pt]{article}
 \usepackage{style}
 
-\title{MATHEMATICAL ANALYSIS}
+\title{REAL ANALYSIS}
 \author{Yaohui Wu}
 \date{\today}
 
 \begin{document}
 \maketitle
 
-\section{Real Numbers}
+\section{The Real Number System}
 \subsection{The Set of Real Numbers}
 We define
-\begin{itemize}
+\begin{enumerate}
     \item The set of natural numbers is \(\N=\{1,2,3,\dots\}\).
     \item The set of integers is \(\Z=\{0,1,-1,2,-2,\dots\}\).
     \item The set of rational numbers is
     \(\Q=\left\{\frac{m}{n}\mid m,n\in\Z,n\neq0\right\}\).
     \item The set of real numbers is \(\R\).
-\end{itemize}
+\end{enumerate}
 Note that \(\N\subset\Z\subset\Q\subset\R\).
 \begin{definition}[Well Ordering Property of \(\N\)]
     Every nonempty subset of \(\N\) has a least element.
@@ -119,14 +119,13 @@ If \(\{x_n\}\) is decreasing and bounded below, then
 
 \subsection{Subsequences}
 \begin{definition}
-    Let \(n_i\) be a sequence that satisfies \(n_i<n_{i+1}\) for all
-    \(i\in\N\).
-    The sequence \(\{x_{n_i}\}\) is a \textit{subsequence} of \(\{x_n\}\).
+    Let \(n_k\) be a sequence with \(n_k<n_{k+1}\) for all \(k\in\N\).
+    The sequence \(\{x_{n_k}\}\) is a \textit{subsequence} of \(\{x_n\}\).
 \end{definition}
 \begin{theorem}
-    If \(\{x_n\}\) is convergent, then every subsequence \(\{x_{n_i}\}\) is
+    If \(\{x_n\}\) is convergent, then every subsequence \(\{x_{n_k}\}\) is
     convergent, and
-    \[\lim_{n\to\infty}x_n=\lim_{i\to\infty}x_{n_i}\]
+    \[\lim_{n\to\infty}x_n=\lim_{i\to\infty}x_{n_k}\]
 \end{theorem}
 
 \subsection{Bolzano-Weierstrass Theorem}
